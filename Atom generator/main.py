@@ -8,7 +8,7 @@ import pathlib
 
 try:
 
-    os.system("title [PROXYLESS] Token Generator and Checker - .gg/katexod")
+    os.system("title [PROXYLESS] Token Generator and Checker - .gg/Atom")
     print("https://github.com/Masat0r")
     print("   ")
     print("   ")
