@@ -1,4 +1,4 @@
-Hi atoom here i fix some eroors 
+Hi atom here i fix some eroors 
 
 
 -------------------------------------
@@ -27,3 +27,8 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+
+
+Made by love ♥ Atom 
