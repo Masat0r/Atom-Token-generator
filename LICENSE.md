@@ -5,7 +5,7 @@ Hi atom here i fix some eroors
 Only for Education 
 
 -------------------------------------
-Copyright © 2022 Atom 
+LICENSE 
 MIT License
 
 Copyright (c) 2022 Atom
@@ -31,4 +31,5 @@ SOFTWARE.
 
 
 
-Made by love ♥ Atom 
+----------------------------------------------------------------------------------
+Made by love Atom ♥ 
