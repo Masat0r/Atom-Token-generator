@@ -4,8 +4,7 @@ Hi atom here i fix some eroors
 -------------------------------------
 Only for Education 
 
--------------------------------------
-LICENSE 
+------------------------------------- 
 MIT License
 
 Copyright (c) 2022 Atom
