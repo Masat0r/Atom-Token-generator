@@ -1,86 +1,59 @@
-import ctypes
-import random
+
 import requests
-import os
-from os import path
-from pathlib import Path
-import pathlib
+import random
+import string
+import time
+import os, string, random, codecs, time
+from random import randint
+from playsound import playsound
+import playsound
+import pygame
 
-try:
+print("""
+Atom Generator Nitro""")
+time.sleep(2)
+print("Generating Nitro Links  For better experience use HeadPhones")
+time.sleep(0.3)
+print("If you get some bug just dont mind\n")
+time.sleep(0.2)
 
-    os.system("title [PROXYLESS] Token Generator and Checker - .gg/Atom")
-    print("https://github.com/Masat0r")
-    print("   ")
-    print("   ")
-    print("   ")
-    x = input("Where to save hits to? \n")
+from pygame import mixer
 
-    xx = open(x, "w+")
-    v = 0
-    b = 0
-    ttal = 0
+pygame.mixer.init()
+pygame.mixer.music.load('music2.mp3')
+pygame.mixer.music.play(999)
 
-    token = ""
 
-    chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789_"
+num = int(input('Input How Many Codes to Generate and Check: '))
 
-    f = open("temptokens.txt", "w+")
-    f1 = open(x, "w")
+with open("Nitro Codes.txt", "w", encoding='utf-8') as file:
+    print("Your nitro codes are being generated, be patient if you entered the high number!")
 
-    number_of_tokens = input("Number of Tokens? \n")
+    start = time.time()
+    
+    for i in range(num):
+        code = "".join(random.choices(
+            string.ascii_uppercase + string.digits + string.ascii_lowercase,
+            k = 16
+        ))
 
-    for c in range(int(number_of_tokens)):
-        part1 = ""
-        part2 = ""
-        part3 = ""
-        for x in range(23):
-            part1 += random.choice(chars)
-        for x in range(6):
-            part2 += random.choice(chars)
-        for x in range(27):
-            part3 += random.choice(chars)
-        part1 = str(part1)
-        part2 = str(part2)
-        part3 = str(part3)
-        part1 = part1 + "."
-        part2 = part2 + "."
-        i = random.choice("O")
-        token = i + part1 + part2 + part3
-        text2save = str(token + "\n") # starts from `1.0`, not `0.0`
-        f.writelines(text2save)
-    f.close()
-    f2 = open("temptokens.txt", "r")
-    yyy = f2.readlines()
-    yyyy = len(yyy)
+        file.write(f"https://discord.gift/{code}\n")
 
-    print("Btw, this is a proxyless checker!")
+    print(f"Generated {num} codes | Time taken: {time.time() - start}\n")
 
-    for tt in yyy:
-        t = tt.rstrip()
-        headers={
-                    'Authorization': t
-                }
-        check = requests.get('https://discordapp.com/api/v6/auth/login', headers=headers)
-        try:
-            if check.status_code == 200:
-                print("\033[1;32;40m[VALID] " + t)
-                f1.writelines(t + '\n')
-                v += 1
-            else:
-                print("\033[1;31;40m[INVALID] " + t)
-                b += 1
-        except Exception:
-            print("\033[1;31;40mYeah we can't contact discordapp.com")
-        ttal += 1
-        varfort = "Checked: " + str(ttal) + "/" + str(yyyy) + " | Valid: " + str(v) + " | Invalid: " + str(b) + " |"
-        ctypes.windll.kernel32.SetConsoleTitleW(f"[PROXYLESS] Token Generator and Checker - .gg/katexod | {varfort}")
-except:
-    print("ay bro u got an error")
-print("\033[1;37;40m---------------------------")
-print("\033[1;32;40mValid Tokens: " + str(v))
-print("\033[1;31;40mInvalid Tokens: " + str(b))
-print("\033[1;37;40m---------------------------")
+with open("Nitro Codes.txt") as file:
+    for line in file.readlines():
+        nitro = line.strip("\n")
 
-f1.close()
+        url = "https://discordapp.com/api/v6/entitlements/gift-codes/" + nitro + "?with_application=false&with_subscription_plan=true"
 
-f2.close()
+        r = requests.get(url)
+
+        if r.status_code == 200:
+            print(f" Valid | {nitro} ")
+            break
+        else:
+            print(f" Invalid | {nitro} ")
+
+input("\nYou have generated, Now press enter to close this, you'll get valid codes in Valid Codes.txt if you see its empty then you got no luck, generate 20 million codes for luck or else.")
+
